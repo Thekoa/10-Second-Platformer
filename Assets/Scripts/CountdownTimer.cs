@@ -15,13 +15,14 @@ public class CountdownTimer : MonoBehaviour
     {
         timeRN = startTime;
     }
-
+    
     void Update()
     {
+        //timer counts down by one
         timeRN -= 1 * Time.deltaTime;
         timerText.text = timeRN.ToString ("0");
-        Debug.Log(timeRN);
         
+        //timer cache for when it reaches 0
         if (timeRN <= 0)
         {
             timeRN = 0;
