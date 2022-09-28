@@ -15,6 +15,7 @@ public class PlayerMoveV2 : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         playerRB2D = GetComponent<Rigidbody2D>();
         playerCOLL2D = GetComponent<CircleCollider2D>();
     }
@@ -22,6 +23,7 @@ public class PlayerMoveV2 : MonoBehaviour
     void Update()
     {
         MoveCircleMove();
+        
     }
 
     //gets the input manager and makes player move

@@ -13,6 +13,7 @@ public class GameOverScene : MonoBehaviour
     public void Respawn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 
     public void BackToMainMenu()
