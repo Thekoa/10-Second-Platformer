@@ -21,4 +21,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void Respawn()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
+    }
 }

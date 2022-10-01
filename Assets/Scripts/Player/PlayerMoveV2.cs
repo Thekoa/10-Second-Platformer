@@ -9,6 +9,8 @@ public class PlayerMoveV2 : MonoBehaviour
     Rigidbody2D playerRB2D;
     CircleCollider2D playerCOLL2D;
 
+    public static AudioClip jumpAudio;
+
     //speeds of character
     [SerializeField] float circleSpeed = 10f;
     [SerializeField] float circleUpSpeed = 5f;
@@ -18,12 +20,12 @@ public class PlayerMoveV2 : MonoBehaviour
         Time.timeScale = 1f;
         playerRB2D = GetComponent<Rigidbody2D>();
         playerCOLL2D = GetComponent<CircleCollider2D>();
+
     }
 
     void Update()
     {
-        MoveCircleMove();
-        
+        MoveCircleMove();        
     }
 
     //gets the input manager and makes player move
