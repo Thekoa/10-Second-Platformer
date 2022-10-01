@@ -1,9 +1,9 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverScene : MonoBehaviour
+public class VictoryScene2 : MonoBehaviour
 {
     void Start()
     {
@@ -12,7 +12,7 @@ public class GameOverScene : MonoBehaviour
 
     public void Respawn()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1f;
     }
 
