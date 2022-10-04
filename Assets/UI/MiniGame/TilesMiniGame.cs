@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class TilesMiniGame : MonoBehaviour
 {
-    public int curButtonOrder;
-    public int maxButtonOder=4;
+    public int curButtonOrder = 1;
+    int maxButtonOder = 4;
     public bool resetProgress = false;
 
+    void Awake() 
+    {
+        curButtonOrder = 1;
+    }
+
+    void Update() 
+    {
+    
+    }
 
     public void DifficultyIncrease()
     {
@@ -22,7 +31,7 @@ public class TilesMiniGame : MonoBehaviour
 
     public void IncorrectButton()
     {
-        curButtonOrder = 0;
+        curButtonOrder = 1;
         resetProgress = true;
     }
 
