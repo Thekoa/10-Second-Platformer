@@ -8,8 +8,8 @@ public class PlayerMoveV2 : MonoBehaviour
     Vector2 moveInput;
     Rigidbody2D playerRB2D;
     CircleCollider2D playerCOLL2D;
-
-    [SerializeField] private AudioClip jumpAudio;
+    [SerializeField] AudioSource jumpAudioSource;
+    [SerializeField] AudioClip jumpAudio;
 
     //speeds of character
     [SerializeField] float circleSpeed = 10f;
@@ -37,13 +37,13 @@ public class PlayerMoveV2 : MonoBehaviour
     //how the player jumps via input manager
     void OnJump(InputValue value)
     {
-        //SoundManager.Instance.PlaySound(jumpAudio);
         if (!playerCOLL2D.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
         
         if(value.isPressed)
         {
             playerRB2D.velocity += new Vector2 (0f, circleUpSpeed);
         }
+        jumpAudioSource.PlayOneShot(jumpAudio);
     }
     
     //Velocity and speed of how high player jumps and falls

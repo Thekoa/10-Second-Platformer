@@ -4,13 +4,43 @@ using UnityEngine;
 
 public class TilesMiniGame : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
+    public GameObject miniGamePanel;
+    public int curButtonOrder = 1;
+    int maxButtonOder = 4;
+    public bool resetProgress = false;
+    public GameObject Timer;
+    
+    void Awake() 
     {
-       
-       
-         //Assign numbers to each button
+        Cursor.visible = true;
+        curButtonOrder = 1;
+    }
+
+    void Update() 
+    {
+        if (maxButtonOder == (curButtonOrder - 1))
+        {
+            DifficultyIncrease();
+            miniGamePanel.SetActive(false);
+            Timer.GetComponent<CountdownTimer>().ResetTimer();
+        }
+    }
+
+    public void DifficultyIncrease()
+    {
+        maxButtonOder++;
+        IncorrectButton();
+    }
+
+    public void CorrectButton() 
+    {
+        curButtonOrder++;
+    }
+
+    public void IncorrectButton()
+    {
+        curButtonOrder = 1;
+        resetProgress = true;
     }
 
 }
