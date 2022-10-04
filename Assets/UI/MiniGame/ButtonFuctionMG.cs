@@ -24,7 +24,6 @@ public class ButtonFuctionMG : MonoBehaviour
         {
             ResetProgress();
             GetComponent<Button>().interactable = true;
-
         }
     }
 
