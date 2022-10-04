@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ButtonFuctionMG : MonoBehaviour
 {
-    
+    public GameObject TilesManager;
+    public int buttonNumber;
+    int buttonOrder;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
     }
@@ -16,5 +18,25 @@ public class ButtonFuctionMG : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnPress()
+    {
+        TilesManager.GetComponent<TilesMiniGame>().resetProgress = true;
+        buttonOrder = TilesManager.GetComponent<TilesMiniGame>().curButtonOrder;
+        //checks if the current number on tiles mini game is equall to this button
+        if (buttonNumber == buttonOrder)
+        {
+            TilesManager.GetComponent<TilesMiniGame>(CorrectButton());
+        }
+        else 
+        {
+        }
+
+    }
+
+    void ResetProgress()
+    { 
+    
     }
 }

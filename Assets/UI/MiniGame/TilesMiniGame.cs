@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class TilesMiniGame : MonoBehaviour
 {
-    int randomNumber;
-    int lastNumber;
-    int maxAttempts = 10;
+    public int curButtonOrder;
+    public int maxButtonOder=4;
+    public bool resetProgress = false;
 
-    void NewRandomNumber()
+
+    public void DifficultyIncrease()
     {
-        for (int i = 0; randomNumber == lastNumber && i < maxAttempts; i++)
-        {
-            randomNumber = Random.Range(0, 10);
-        }
-        lastNumber = randomNumber;
+        maxButtonOder++;
+        IncorrectButton();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void CorrectButton() 
     {
-       
-       
-         //Assign numbers to each button
+        curButtonOrder++;
+    }
+
+    public void IncorrectButton()
+    {
+        curButtonOrder = 0;
+        resetProgress = true;
     }
 
 }
